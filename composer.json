@@ -1,0 +1,42 @@
+{
+    "name": "shengamo/laravel-emsika-sms",
+    "description": "Send an SMS through the Emsika SMS gateway.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mo Malenga",
+            "email": "mo@shengamo.com",
+            "homepage": "http://www.shengamo.com"
+        }
+    ],
+    "homepage": "https://github.com/shengamo/laravel-emsika-sms",
+    "keywords": ["Laravel", "LaravelEmsikaSms"],
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shengamo\\LaravelEmsikaSms\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shengamo\\LaravelEmsikaSms\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shengamo\\LaravelEmsikaSms\\LaravelEmsikaSmsServiceProvider"
+            ],
+            "aliases": {
+                "LaravelEmsikaSms": "Shengamo\\LaravelEmsikaSms\\Facades\\LaravelEmsikaSms"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
