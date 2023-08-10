@@ -5,5 +5,5 @@ return [
     'username' => env('EMSIKA_USERNAME'),
     'password'=> env('EMSIKA_PASSWORD'),
     'url' => env('EMSIKA_URL'),
-    'timeout' => env('EMSIKA_default_timeout'),
+    'timeout' => env('EMSIKA_DEFAULT_TIMEOUT'),
 ];
