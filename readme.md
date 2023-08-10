@@ -1,11 +1,11 @@
-# LaravelEmsikaSms
+# Laravel Emsika SMS
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
 [![StyleCI][ico-styleci]][link-styleci]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
+TSend an SMS through the Emsika SMS gateway. Take a look at [contributing.md](contributing.md) to see a to do list.
 
 ## Installation
 
@@ -17,6 +17,25 @@ $ composer require shengamo/laravel-emsika-sms
 
 ## Usage
 
+Add these values to your .env file. These are the details you get from your Emsika account.
+``` bash
+    EMSIKA_SOURCE_ADDRESS=
+    EMSIKA_USERNAME=
+    EMSIKA_PASSWORD=
+    EMSIKA_URL=
+    EMSIKA_DEFAULT_TIMEOUT=90
+```
+### Step 1
+1. Run the migration.
+2. Add a message to the EmsikaOutbox model.
+   2. ```EmsikaOutbox::create(['phone','message']);```
+3. Add the sms to the schedule in the App\Console\Kernel.php file
+   4. ``` bash
+      protected function schedule(Schedule $schedule)
+      {
+          $schedule->command('send:sms')->everyMinute();
+      }
+      ```
 ## Change log
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.
@@ -33,12 +52,13 @@ Please see [contributing.md](contributing.md) for details and a todolist.
 
 ## Security
 
-If you discover any security related issues, please email author@email.com instead of using the issue tracker.
+If you discover any security related issues, please email support@shengamo.com instead of using the issue tracker.
 
 ## Credits
 
-- [Author Name][link-author]
-- [All Contributors][link-contributors]
+- [Mo Malenga][link-author]
+
+[//]: # (- [All Contributors][link-contributors])
 
 ## License
 
